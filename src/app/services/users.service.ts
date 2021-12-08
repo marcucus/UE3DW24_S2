@@ -13,6 +13,6 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Users[]>(baseUrl + 'users/');
+    return this.http.get<Users[]>(baseUrl + '/users');
   }
 }
