@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './general/header/header.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { UsersCreateComponent } from './components/users-create/users-create.component';
+import { UsersDeleteComponent } from './components/users-delete/users-delete.component';
+import { UsersUpdateComponent } from './components/users-update/users-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    UsersListComponent
+    UsersListComponent,
+    UsersCreateComponent,
+    UsersDeleteComponent,
+    UsersUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,4 @@
+<label for="user-select">Choisis un utilisateur à supprimer :</label>
+<select name="user-select" id="user-select" >
+    <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
+</select>
