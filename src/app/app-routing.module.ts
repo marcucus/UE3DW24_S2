@@ -6,9 +6,7 @@ import { UsersCreateComponent} from './components/users-create/users-create.comp
 import { UsersDeleteComponent} from './components/users-delete/users-delete.component';
 import { UsersUpdateComponent} from './components/users-update/users-update.component';
 const routes: Routes = [
-  { path:'header', component: HeaderComponent},
-  { path:'users', component: UsersListComponent},
-  { path:'delete', component: UsersDeleteComponent},
+  //{ path:'header', component: HeaderComponent}
 ];
 
 @NgModule({

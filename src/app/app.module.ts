@@ -9,6 +9,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UsersCreateComponent } from './components/users-create/users-create.component';
 import { UsersDeleteComponent } from './components/users-delete/users-delete.component';
 import { UsersUpdateComponent } from './components/users-update/users-update.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersUpdateComponent } from './components/users-update/users-update.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

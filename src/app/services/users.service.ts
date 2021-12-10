@@ -19,4 +19,8 @@ export class UsersService {
   getAllToDel() {
     return this.http.get<Users[]>(baseUrl + '/users');
   }
+
+  getAllToUp() {
+    return this.http.get<Users[]>(baseUrl + '/users');
+  }
 }

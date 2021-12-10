@@ -9,9 +9,23 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersUpdateComponent implements OnInit {
 
-  constructor() { }
+  users?: Users[];
+
+  constructor(private usersService : UsersService) { }
 
   ngOnInit(): void {
+    this.getAllUsersToUp();
   }
 
+  getAllUsersToUp(): void {
+    this.usersService.getAllToUp()
+      .subscribe(
+        data => {
+          this.users = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }

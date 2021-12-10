@@ -1,1 +1,43 @@
-<p>users-update works!</p>
+<form>
+    <table>
+        <tr>
+            <td colspan="2">
+                <h5>Mise à jour d'un utilisateur</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Utilisateur : </label>
+            </td>
+
+            <td>
+                <select class="form-control" name="user-select" id="user-select" >
+                    <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Firstname : </label>
+            </td>
+
+            <td>
+                <input type="" class="form-control" id="" aria-describedby="" placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Lastname : </label>
+            </td>
+
+            <td>
+                <input type="" class="form-control" id="" aria-describedby="" placeholder="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br><input type="submit" class="button" value="MAJ">
+            </td>
+        </tr>
+    </table>
+</form>

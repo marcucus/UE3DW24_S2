@@ -1,4 +1,25 @@
-<label for="user-select">Choisis un utilisateur à supprimer :</label>
-<select name="user-select" id="user-select" >
-    <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
-</select>
+<form>
+    <table>
+        <tr>
+            <td colspan="2">
+                <h5>Suppression d'un utilisateur</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Utilisateur : </label>
+            </td>
+
+            <td>
+                <select class="form-control" name="user-select" id="user-select" >
+                    <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br><input type="submit" class="button" value="Supprimer">
+            </td>
+        </tr>
+    </table>
+</form>
