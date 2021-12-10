@@ -20,7 +20,13 @@ export class UsersService {
     return this.http.get<Users[]>(baseUrl + '/users');
   }
 
+  userDelete(id: number){
+    return this.http.delete<any>(baseUrl + '/deleteuser' + id);
+  }
+
   getAllToUp() {
     return this.http.get<Users[]>(baseUrl + '/users');
   }
+
+  
 }

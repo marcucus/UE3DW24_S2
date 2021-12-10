@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
 import { Users } from 'src/app/models/users.model';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -9,9 +11,13 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersDeleteComponent implements OnInit {
 
+  delForm = this.formDel.group({
+    id:''
+});
+
   users?: Users[];
 
-  constructor(private usersService : UsersService) { }
+  constructor(private usersService : UsersService, private formDel : FormBuilder) { }
 
   ngOnInit(): void {
     this.getAllUsersToDel();
@@ -27,6 +33,19 @@ export class UsersDeleteComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  delSubmit(): void {
+    this.usersService.userDelete(Number(this.delForm.get('id')?.value))
+      .subscribe(
+          data => {
+              console.log(data);
+          },
+          error => {
+              console.log(error);
+          }
+      );
+      this.delForm.reset();
   }
 
 }
