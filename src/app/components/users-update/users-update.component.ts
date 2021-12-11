@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/models/users.model';
 import { UsersService } from 'src/app/services/users.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-users-update',
@@ -10,8 +11,15 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersUpdateComponent implements OnInit {
 
   users?: Users[];
+  user! : Users;
 
-  constructor(private usersService : UsersService) { }
+  updateForm = this.formBuilder.group({
+    id:'',
+    firstname:'',
+    lastname:''
+  });
+
+  constructor(private usersService : UsersService, private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
     this.getAllUsersToUp();
@@ -27,5 +35,21 @@ export class UsersUpdateComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  updateSubmit():void{
+    this.user = this.updateForm.value;
+
+    this.usersService.updateUser(this.user)
+      .subscribe(
+        data => {
+          this.user = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      this.updateForm.reset();
   }
 }

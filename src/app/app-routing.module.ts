@@ -7,9 +7,10 @@ import { UsersDeleteComponent} from './components/users-delete/users-delete.comp
 import { UsersUpdateComponent} from './components/users-update/users-update.component';
 const routes: Routes = [
   { path:'header', component: HeaderComponent},
-  { path:'users', component: HeaderComponent},
-  { path:'create', component: HeaderComponent},
-  { path:'delete', component: UsersDeleteComponent}
+  { path:'users', component: UsersListComponent},
+  { path:'create', component: UsersCreateComponent},
+  { path:'delete', component: UsersDeleteComponent},
+  { path:'update', component: UsersUpdateComponent}
 
 ];
 

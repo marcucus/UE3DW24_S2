@@ -13,9 +13,10 @@ export class UsersDeleteComponent implements OnInit {
 
   delForm = this.formDel.group({
     id:''
-});
+  });
 
   users?: Users[];
+
 
   constructor(private usersService : UsersService, private formDel : FormBuilder) { }
 
@@ -36,16 +37,16 @@ export class UsersDeleteComponent implements OnInit {
   }
 
   delSubmit(): void {
-    this.usersService.userDelete(Number(this.delForm.get('id')?.value))
+    this.usersService.delUser(Number(this.delForm.get('id')?.value))
       .subscribe(
-          data => {
-              console.log(data);
-          },
-          error => {
-              console.log(error);
-          }
-      );
-      this.delForm.reset();
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+    );
+    this.delForm.reset();
   }
 
 }
