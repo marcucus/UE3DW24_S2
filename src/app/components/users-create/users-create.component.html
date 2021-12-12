@@ -11,7 +11,9 @@
             </td>
 
             <td>
-                <input id="firstname" type="text" formControlName="firstname" class='form-control'>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="Firstname" value="firstname" id="firstname" type="text" formControlName="firstname">
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -20,12 +22,14 @@
             </td>
 
             <td>
-                <input id="lastname" type="text" formControlName="lastname" class='form-control'>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="Lastname" value="lastname" id="lastname" type="text" formControlName="lastname">
+                </mat-form-field>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <br><input class="button" type="submit" value="Enregistrer">
+                <br><button mat-raised-button color="primary" class="button" type="submit">Enregistrer</button>
             </td>
         </tr>
     </table>

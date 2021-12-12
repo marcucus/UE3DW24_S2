@@ -6,20 +6,25 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <label for="">Utilisateur : </label>
-            </td>
 
             <td>
-                <select class="form-control" formControlName="id" name="id" id="id" >
+                <mat-form-field appearance="fill">
+                    <mat-label>Utilisateur</mat-label>
+                    <mat-select id="id" formControlName="id"  name="user">
+                      <mat-option *ngFor="let user of users" [value]="user.id">
+                        {{user.firstname}} - {{ user.lastname }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <!--<select class="form-control" formControlName="id" name="id" id="id" >
                     <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
-                </select>
+                </select>-->
                 <!--<input id="id" type="text" formControlName="id">-->
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <br><input class="button" type="submit" value="Supprimer">
+                <button mat-raised-button color="primary" class="button" type="submit">Supprimer</button>
             </td>
         </tr>
     </table>

@@ -11,10 +11,17 @@
             </td>
 
             <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Utilisateur</mat-label>
+                    <mat-select id="id" formControlName="id"  name="user">
+                      <mat-option *ngFor="let user of users" [value]="user.id">
+                        {{user.firstname}} - {{ user.lastname }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 <!--<select class="form-control" id="id" formControlName="id">
                     <option *ngFor="let user of users" value={{user.id}}>{{user.firstname}} - {{ user.lastname }}</option>
                 </select>-->
-                <input id="id" type="text" formControlName="id" class="form-control">
             </td>
         </tr>
         <tr>
@@ -23,7 +30,9 @@
             </td>
 
             <td>
-                <input id="firstname" type="text" class="form-control" formControlName="firstname">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="Firstname" value="firstname" id="firstname" type="text" formControlName="firstname">
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -32,12 +41,14 @@
             </td>
 
             <td>
-                <input id="lastname" type="text" class="form-control" formControlName="lastname">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="Lastname" value="lastname" id="lastname" type="text" formControlName="lastname">
+                </mat-form-field>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <br><button type="submit" class="button">Mise à jour</button>
+                <br><button mat-raised-button color="primary" type="submit" class="button">Mise à jour</button>
             </td>
         </tr>
     </table>

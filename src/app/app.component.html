@@ -1,3 +1,8 @@
-<app-header></app-header>
+<app-header></app-header><br>
+<mat-tab-group animationDuration="1200ms" mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+    <mat-tab label="Créer"><br><app-users-create></app-users-create><br></mat-tab>
+    <mat-tab label="Mettre à jour"><br><app-users-update></app-users-update><br></mat-tab>
+    <mat-tab label="Supprimer"><br><app-users-delete></app-users-delete><br></mat-tab>
+  </mat-tab-group><br>
 <app-users-list></app-users-list>
 <router-outlet></router-outlet>
