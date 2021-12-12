@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Users } from 'src/app/models/users.model';
 import { UsersService } from 'src/app/services/users.service';
 import { FormBuilder } from '@angular/forms';
@@ -23,7 +23,7 @@ export class UsersCreateComponent implements OnInit {
   }
 
   createSubmit():void {
-    this.user = this.createForm.value
+    this.user = this.createForm.value;
     this.usersService.createUser(this.user)
     .subscribe(
       data => {
