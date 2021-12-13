@@ -1,3 +1,36 @@
 table{
     margin:auto;
 }
+
+
+
+.button{
+	margin: 10px auto;
+	border: none;
+	padding: 5px 22px;
+	font-size: 18px;
+	position: relative;
+    border-radius: 5px;
+	&::before{
+		transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		content: '';
+		width: 50%;
+		height: 100%;
+		background: #4054b4;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	& .button_text{
+		color: white;
+		// check out mdn docs for different types of blend modes. 
+		mix-blend-mode: difference;
+	}
+	&:hover{
+		&::before{
+			background: #4054b4;
+			width: 100%;
+		}
+    }
+}
