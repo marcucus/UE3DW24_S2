@@ -29,7 +29,7 @@ export class UsersService {
   }
 
   updateUser(user : Users) {
-    return this.http.put<Users>(baseUrl + 'updateuser/', user)
+    return this.http.put<Users>(baseUrl + 'updateuser/' + user.id, user)
   }
 
   delUser(id : Number) {
